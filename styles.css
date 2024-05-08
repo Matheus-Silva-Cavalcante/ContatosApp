@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --cor-fundo-principal: #F0F2F7;
+    --cor-fundo-cabecalho: #1A69C9;
+    --color-cabecalho: #FFFFFF;
+    --cor-borda: #AAAAAA;
+    --cor-adicionar-contato: #90C3FF;
+    --cor-contatos-conteudo: #FFFFFF;
+    --colo-contatos: #777777;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: var(--cor-fundo-principal);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cabecalho{
+    padding: 25px;
+    background: var(--cor-fundo-cabecalho);
+    color: var(--color-cabecalho);
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    font-weight: 700;        
+}
+
+.container{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.busca-wrapper{
+    width: 100%;
+    max-width: 600px;
+    padding-top: 3em;
+    margin: auto;
+    text-align: center;  
+    position: relative;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.campo-de-busca{
+    width: 100%;
+    padding: 1em 1.5em;
+    border-radius: 25px;
+    border: 1px solid var(--cor-borda);
+    box-sizing: border-box;
+    display: flex;
+}
+
+.buscar-contato{
+    position: absolute;
+    right: 1.5em;
+    background-color: transparent;
+    border: none;
+}
+
+.adicionar-contato__wrapper{
+    display: flex;
+    justify-content: end;
+}
+
+.adicionar-contato{
+    background-color: var(--cor-adicionar-contato);
+    border-radius: 50px;
+    padding: 10px;
+    margin: 10px;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.adicionar-contato>img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contatos{
+    overflow: auto;
+    flex: 1;
+}
+
+.contatos>.container{
+    display: grid; 
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    gap: 15px;
+}
+
+.contatos-conteudo{
+    background-color: var(--cor-contatos-conteudo);
+    display: flex;
+    align-items: center;
+    padding: 15px;  
+}
+
+.contatos-nome{
+    color: var(--colo-contatos);
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.contatos-texto{
+    color: var(--colo-contatos);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+/*.contatos-texto__img-wrapper{
+    display: inline-block;
+    width: 1em;
+    text-align: center;
+}
+
+.contatos-texto__img-wrapper>img{
+    max-width: 1em;
+    max-height: 1em
+}*/
+
+.contatos-texto img{
+    vertical-align: text-bottom;
+    max-width: 1em;
+    max-height: 1em
+}
+
+.contatos-texto>div{
+    display: grid;
+    grid: auto / 1em auto;
+    gap: .5em;
+}
+
+.contatos-texto>div>span:first-child{
+    text-align: center;
+}
+
+.adicionar-contato__mobile{
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    body{
+        background-color: #FFFFFF;
+    }
+    .cabecalho{
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+    }
+    .contatos>.container{
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .contatos-conteudo{
+        border: 0.5px solid #EEEEEE;
+        overflow: hidden;
+    }
+    .contatos-conteudo span{
+        word-break: break-word;
+    }
+    .busca-wrapper{
+        padding: 10px;
+    }
+    .campo-de-busca{
+        border-radius: 0%;
+    }
+    .adicionar-contato{
+        display: none;
+    }
+    .adicionar-contato__mobile{
+        display: block;
+    }
+    .contatos-nome{
+        font-size: 16px;
+    }
+    .contatos-texto{
+        font-size: 13px;
+    }
+}
+
+
+
